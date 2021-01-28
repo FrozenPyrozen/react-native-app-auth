@@ -52,7 +52,9 @@ public final class CustomConnectionBuilder implements ConnectionBuilder {
                 conn.setRequestProperty(header.getKey(), header.getValue());
             }
         }
-
+        conn.setReadTimeout(5000);
+        conn.setConnectTimeout(5000);
+        
         return conn;
     }
 }
